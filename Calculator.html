@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exp 8 Calculator</title>
+    <style>
+        #answer {
+            text-align: right;
+        }
+
+        body {
+            background-color: rgb(14, 43, 139);
+        }
+
+        .container {
+            background-color: rgb(125, 228, 100);
+            margin: auto;
+            padding: 2px;
+            width: 400px;
+        }
+
+        table {
+            width: 100%;
+
+        }
+
+        button {
+            font-size: 30px;
+            border: none;
+            width: 100%;
+            height: 70px;
+        }
+
+        button:hover {
+            background-color: rgb(73, 255, 119);
+        }
+
+        #answer {
+            height: 90px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table  >
+            <tr>
+                <td colspan="4" id="answer">0</td>
+            </tr>
+            <tr>
+                <td colspan="3"><button onclick="btn(this);">AC</button></td>
+                <td><button onclick="btn(this);">/</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="btn(this)">7</button></td>
+                <td><button onclick="btn(this)">8</button></td>
+                <td><button onclick="btn(this)">9</button></td>
+                <td><button onclick="btn(this)">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="btn(this)">4</button></td>
+                <td><button onclick="btn(this)">5</button></td>
+                <td><button onclick="btn(this)">6</button></td>
+                <td><button onclick="btn(this)">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="btn(this)">1</button></td>
+                <td><button onclick="btn(this)">2</button></td>
+                <td><button onclick="btn(this)">3</button></td>
+                <td><button onclick="btn(this)">+</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick="btn(this)">0</button></td>
+                <td><button onclick="btn(this)">.</button></td>
+                <td><button onclick="btn(this)">=</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var answer = document.getElementById('answer');
+
+        function btn(obj) {
+
+            var pushed = obj.innerHTML;
+
+            if (pushed == '=') {
+                answer.innerHTML = eval(answer.innerHTML);
+
+            } else if (pushed == 'AC') {
+                answer.innerHTML = '0';
+
+            } else {
+                if (answer.innerHTML == '0') {
+                    answer.innerHTML = pushed;
+
+                } else {
+                    answer.innerHTML += pushed;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
